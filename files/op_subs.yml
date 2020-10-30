@@ -3,30 +3,33 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: elasticsearch-operator
-  namespace: openshift-operators 
+  namespace: openshift-operators-redhat 
 spec:
   name: elasticsearch-operator
   source: redhat-operators 
   sourceNamespace: openshift-marketplace
-  channel: preview
+  channel: 4.5
   installApprovalPlan: Automatic
+
 ## Jaeger Operator
-apiVersion: operators.coreos.com/v1alpha1
-kind: Subscription
+#apiVersion: operators.coreos.com/v1alpha1
+#kind: Subscription
 metadata:
-  name: elasticsearch-operator
-  namespace: openshift-operators 
+  name: jaeger
+  namespace: openshift-operators
 spec:
-  name: elasticsearch-operator
+  name: jaeger
   source: redhat-operators 
+  channel: stable
   sourceNamespace: openshift-marketplace
+  installApprovalPlan: Automatic
 
 ## Kiali  
-apiVersion: operators.coreos.com/v1alpha1
-kind: Subscription
+#apiVersion: operators.coreos.com/v1alpha1
+#kind: Subscription
 metadata:
   name: kiali-ossm 
-  namespace: openshift-operators 
+  namespace: openshift-operators
 spec:
   name: kiali-ossm 
   source: redhat-operators 
@@ -35,8 +38,8 @@ spec:
   installApprovalPlan: Automatic
 
 ##Service Mesh
-apiVersion: operators.coreos.com/v1alpha1
-kind: Subscription
+#apiVersion: operators.coreos.com/v1alpha1
+#kind: Subscription
 metadata:
   name: servicemeshoperator
   namespace: openshift-operators 
@@ -44,5 +47,5 @@ spec:
   name: servicemeshoperator
   source: redhat-operators 
   sourceNamespace: openshift-marketplace
-  channel: '1.0'
+  channel: stable
   installApprovalPlan: Automatic
